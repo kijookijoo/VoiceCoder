@@ -1,6 +1,6 @@
-# WhisperText
+# VoiceCoder
 
-WhisperText is a macOS push-to-talk transcription tool.
+This is a push-to-talk transcription tool.
 
 It stays running in the background, listens for a global hotkey, records from the microphone while the hotkey is held, transcribes speech locally with `faster-whisper`, copies the result to the clipboard, and pastes it into the currently focused app.
 
@@ -43,25 +43,6 @@ Behavior:
 3. Release the hotkey.
 4. The app transcribes the captured audio.
 5. The text is copied and pasted into the active app.
-
-## macOS Requirements
-
-This project is macOS-specific in its current form.
-
-It depends on:
-
-- `pynput` for global hotkeys
-- `sounddevice` for microphone capture
-- `faster-whisper` for local transcription
-- `tkinter` for the floating overlay
-- macOS Accessibility APIs for active-window tracking and synthetic paste
-- `afplay` for start/stop sounds
-
-You will likely need to grant Accessibility permission to the terminal app that launches WhisperText so it can:
-
-- monitor global keyboard input
-- inspect the focused window
-- send paste keystrokes
 
 ## High-Level Architecture
 
